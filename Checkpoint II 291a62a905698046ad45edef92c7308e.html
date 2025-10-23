@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Checkpoint II</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(134, 131, 126, 1);
+	fill: rgba(134, 131, 126, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="291a62a9-0569-8046-ad45-edef92c7308e" class="page sans"><header><div class="page-header-icon undefined"><img class="icon notion-static-icon" src="https://www.notion.so/icons/compressed-document_orange.svg"/></div><h1 class="page-title">Checkpoint II</h1><p class="page-description"></p></header><div class="page-body"><hr id="291a62a9-0569-8013-a36f-d02d487ec830"/><p id="291a62a9-0569-80a9-ade7-ecc5cd3b258a" class=""><strong>Questão 1</strong></p><p id="291a62a9-0569-80e1-a9a4-d9c82a5c62d4" class="">Qual dos seguintes não é um objetivo fundamental dos Sistemas Operacionais para este dispositivo inteligente?</p><p id="291a62a9-0569-803f-94da-d9c38788e0db" class=""><strong>Resposta: d) Eliminar completamente a necessidade de drivers de dispositivo.</strong></p><p id="291a62a9-0569-80ad-aa55-de7007c931db" class=""><strong>Questão 2</strong></p><p id="291a62a9-0569-8082-8b14-ca7cfe787a48" class="">No contexto dos Sistemas Operacionais, qual a função essential dos &quot;DRIVERS&quot; em relação à comunicação e gerenciamento do hardware, que permite ao SO interagir com uma vasta gama de periféricos de forma padronizada?</p><p id="291a62a9-0569-802d-b696-c9ff9b89f24c" class=""><strong>Resposta: b) Atuam como uma camada de abstração, contendo as informações sobre o que o equipamento é capaz de realizar e os códigos necessários para acessá-lo.</strong></p><p id="291a62a9-0569-8028-8062-c3a30412a9ff" class=""><strong>Questão 3</strong></p><p id="291a62a9-0569-80c2-9f4e-fd32a352ae33" class="">Qual a principal desvantagem dos Sistemas Monoprogramáveis ou Monotarefa, como essa ineficiência impactava severamente a utilização dos recursos computacionais?</p><p id="291a62a9-0569-809f-8648-cdac129a4218" class=""><strong>Resposta: b) Nesses sistemas, o processor permanecia ocioso enquanto aguardava por um evento de Entrada/Saida, resultando em uma baixa utilização da CPU e da memória principal.</strong></p><p id="291a62a9-0569-8038-9113-dca40adc89a3" class=""><strong>Questão 4</strong></p><p id="291a62a9-0569-803f-be65-daf9c4c1149a" class="">Qual a distinção essencial entre Sistemas Fortemente Acoplados e Sistemas Fracamente Acoplados?</p><p id="291a62a9-0569-8077-ac9e-eb5c38c8215a" class=""><strong>Resposta: b) Fortemente acoplados compartilham uma memória comum e são mais eficientes, enquanto fracamente acoplados se comunicam por rede e são mais tolerantes a falhas.</strong></p><p id="291a62a9-0569-8009-a2a6-ce604546ddad" class=""><strong>Questão 5</strong></p><p id="291a62a9-0569-80e2-9727-f953e5c2df46" class="">A técnica de Entrada e Saida controlada por programa ou Polling, como descrita, é ineficiente porque?</p><p id="291a62a9-0569-80a5-84aa-d3345d01940b" class=""><strong>Resposta: b) Gerando um enorme desperdício de tempo da CPU poder ser usado em outras tarefas.</strong></p><p id="291a62a9-0569-80ef-ad3f-dab9313f2fdb" class=""><strong>Questão 6</strong></p><p id="291a62a9-0569-8015-9802-e67440187819" class="">Como a implementação de mecanismo de interrupção nos operacionais permite uma comparação com a técnica de polling, permitindo a multiprogramação e a reatividade em sistemas modernos?</p><p id="291a62a9-0569-8089-9fdd-e989bd80fe9b" class=""><strong>Resposta: b) Permitindo a substituição do polling por interrupções, onde a CPU é notificada quando uma operação de E/S termina, liberando-a para outras tarefas durante a espera.</strong></p><p id="291a62a9-0569-8055-b387-dee7943d2c07" class=""><strong>Questão 7</strong></p><p id="291a62a9-0569-800f-9ac4-c48bf1c22481" class="">Um desenvolvedor de software está depurando um programa complexo que, ocasionalmente, exibe comportamentos inesperados, como crashes ou falhas de segurança. Para entender o que acontece, ele precisa monitorar o fluxo de execução do programa e o sistema operacional. Qual a diferença central entre uma Interrupção (de Hardware) e uma Exceção (de Software), em termos de sua origem e como o sistema operacional responde a elas?</p><p id="291a62a9-0569-8067-bba6-d4063ffe34dc" class=""><strong>Resposta: b) A interrupção é um evento imprevisível, mas a exceção é o resultado direto de uma instrução específica no código do programa (como uma divisão por zero).</strong></p><p id="291a62a9-0569-804a-b224-e13ea1eb6650" class=""><strong>Questão 8</strong></p><p id="291a62a9-0569-803f-878d-c26989487e80" class="">Qual técnica de Entrada e Saida permite que o E/S seja feito de forma independente da CPU, liberando a CPU para outras tarefas durante a maior parte da operação?</p><p id="291a62a9-0569-8055-9526-edbb26d8340b" class=""><strong>Resposta: c) Acesso Direto a Memória (DMA), onde um controlador dedicado gerencia a transferên cia de blocos de dados.</strong></p><p id="291a62a9-0569-8044-9ce0-dd0909874eb6" class=""><strong>Questão 9</strong></p><p id="291a62a9-0569-80fa-a270-d8fea5474703" class="">Qual a diferença fundamental entre uma Interrupção, uma Exceção e uma Trap no contexto de sistemas operacionais?</p><p id="291a62a9-0569-80d5-ad00-d289d9115303" class=""><strong>Resposta: a) Uma Interrupção é assíncrona, gerada por hardware externo; uma Exceção é síncrona, gerada por erro no programa; uma Trap é síncrona, intencional para chamar o SO.</strong></p><p id="291a62a9-0569-80ac-b0d5-e99796d63c0e" class=""><strong>Questão 10</strong></p><p id="291a62a9-0569-808d-b3b4-ec70daec3ab3" class="">Qual o mecanismo principal que impede que um programa de usuário execute operações privilegiadas diretamente, forçando-o a solicitar ao sistema operacional que o faça em seu nome?</p><p id="291a62a9-0569-8053-97f1-ea30078dc008" class=""><strong>Resposta: a) Modo de Usuário (User Mode), onde o programa é executado com privilégios limitados, e o Modo de Supervisor (Kernel Mode), onde o SO executa operações privilegiadas.</strong></p><p id="291a62a9-0569-805a-b5ec-f1adfa5e73b7" class=""><strong>Questão 11</strong></p><p id="291a62a9-0569-808a-afec-e946fa1a5930" class="">Qual mecanismo presente nos processadores permite que um software realize uma operação que exija acesso privilegiado, como acessar um dispositivo de hardware ou modificar configurações do sistema?</p><p id="291a62a9-0569-8055-a89b-fcbc21a52be6" class=""><strong>Resposta: c) A reescrita do programa de aplicação em linguagem de assembly para incluir instruções privilegiadas.</strong></p><p id="291a62a9-0569-8085-aa90-dba1887f4d9d" class=""><strong>Questão 12</strong></p><p id="291a62a9-0569-800c-8eb2-dab3f2506f2a" class="">Uma startup está projetando um novo sistema operacional para dispositivos IoT multo simples e de baixo custo, onde a performance e a simplicidade são prioritárias. Eles precisam decidir qual arquitetura de kernel é a mais adequada para esse cenário, considerando que o sistema será executado em hardware com recursos limitados.</p><p id="291a62a9-0569-80aa-8dad-c69de7a748d8" class=""><strong>Resposta: b) Arquitetura Microkernel, que separa os serviços em processos independentes.</strong></p><p id="291a62a9-0569-80f2-8ee9-f525006b5918" class=""><strong>Questão 13</strong></p><p id="291a62a9-0569-80d4-b81d-f95950ad074e" class="">Uma empresa de desenvolvimento de sistemas busca criar um sistema operacional de alta disponibilidade e robustez, onde a falha de um serviço não comprometa o todo. Eles consideram diferentes arquiteturas, mas priorizam a modularidade e a facilidade de manutenção.</p><p id="291a62a9-0569-80c5-baa5-def198e0e4e9" class=""><strong>Resposta: b) Arquitetura em Camadas, que organiza os serviços em níveis hierárquicos.</strong></p><p id="291a62a9-0569-8098-ab30-c29e917f9d7d" class=""><strong>Questão 14</strong></p><p id="291a62a9-0569-800e-ae2d-f6cb772e72fc" class="">Em um sistema operacional multitarefa, a ilusão de que vários programas estão sendo executados simultaneamente é criada através do gerenciamento eficiente dos recursos do sistema, particularmente da CPU. Para que o SO possa alternar entre diferentes tarefas de forma eficiente, ele precisa manter informações sobre cada tarefa em andamento.</p><p id="291a62a9-0569-8087-b1fe-da0bcd9c17cb" class=""><strong>Resposta: c) Um processo é apenas o código executável de um programa, e seus componentes são input, Output e Memory.</strong></p><p id="291a62a9-0569-8037-9f14-d3ab14aa661e" class=""><strong>Questão 15</strong></p><p id="291a62a9-0569-80ea-b5bd-c9524029c02a" class="">Em um ambiente computacional moderno e multitarefa, o sistema operacional gerencia a execução de múltiplos programas de forma que pareça que eles estão rodando simultaneamente. Para conseguir isso, ele precisa de uma ilusão de continuidade para cada programa em execução, mesmo quando ele é interrompido para dar vez a outro.</p><p id="291a62a9-0569-8017-bcdf-fb3fe452854d" class=""><strong>Resposta: b) Bloco de Controle de Processo (PCB), que contém informações como o estado do processo, contadores de programa, alocação de memória e mais.</strong></p><p id="291a62a9-0569-80d6-98b6-f72e9a59510b" class=""><strong>Questão 16</strong></p><p id="291a62a9-0569-808e-9f6c-ca307d39316e" class="">Em um sistema multiprogramável, um programa em execução em executed pode assumir diferentes estados primários e mais comum sistema operacional multiprogramável, considerando as transições voluntárias e involuntárias?</p><p id="291a62a9-0569-8006-9054-cbc20e08732d" class=""><strong>Resposta: a) Iniciado, Em Pausa, Terminado.</strong></p><p id="291a62a9-0569-805f-aac7-fcf64abcfc57" class=""><strong>Questão 17</strong></p><p id="291a62a9-0569-80dc-b6a6-c8f1bf3e5018" class="">Em um sistema operacional de tempo compartilhado, múltiplos processos competem pelo uso da CPU. Para garantir que nenhum processo monopolize o processador, o sistema implementa um mecanismo de preempção baseado em tempo.</p><p id="291a62a9-0569-800d-abb9-e1441901516c" class=""><strong>Resposta: b) O uso de um timer para gerar interrupções em intervalos regulares, permitindo que o SO alterne entre processos.</strong></p><p id="291a62a9-0569-8063-b8c3-dccdcd1241c0" class=""><strong>Questão 18</strong></p><p id="291a62a9-0569-80bb-a47b-e6622186f02c" class="">Um grupo de estudantes de engenharia de software está desenvolvendo um aplicativo complexo que envolve a criação de vários módulos que devem funcionar de forma cooperativa, mas com diferentes níveis de isolamento e compartilhamento de recursos. Eles debatem se devem implementar esses módulos como processos independentes ou como subprocessos.</p><p id="291a62a9-0569-80e1-9ea2-cbcb063d2d65" class=""><strong>Resposta: c) Subprocessos são sempre mais rápidos que processos independentes.</strong></p><p id="291a62a9-0569-80a8-830d-f8248daf4d92" class=""><strong>Questão 19</strong></p><p id="291a62a9-0569-8039-b650-cc9f39d06920" class="">Uma empresa de desenvolvimento de jogos esta otimizando um motor gráfico para rodar em hardware limitado, como consoles ou dispositivos móveis. Para renderizar frames e processar a lógica do jogo simultaneamente, eles precisam de um mecanismo que permita a execução paralela de tarefas dentro do mesmo programa, aproveitando o máximo os múltiplos núcleos do processador.</p><p id="291a62a9-0569-8052-9d81-ec11c65205cb" class=""><strong>Resposta: a) Threads são mais seguros, pois cada um possui seu próprio espaço de endereçamento isolado.</strong></p><p id="291a62a9-0569-8076-b1aa-c7925f1b63f5" class=""><strong>Questão 20</strong></p><p id="291a62a9-0569-803d-8175-d40a147c950d" class="">Uma equipe de desenvolvedores está criando um novo sistema operacional e debate a forma de implementar o suporte a threads. Eles precisam decidir se o suporte será fornecido pelo kernel do SO ou pela biblioteca de usuário. A escolha impacta na portabilidade, eficiência e complexidade do sistema.</p><p id="291a62a9-0569-80d1-8593-ca40b8d6cd4d" class=""><strong>Resposta: c) Threads em Modo Usuário (TMU) e &quot;Threads em Modo Kernel&quot; (TMK), onde o TMU é implementado pela biblioteca do usuário e o TMK pelo kernel do SO.</strong></p><p id="291a62a9-0569-8062-aedb-cbcabc75b1f2" class=""><strong>Questão 21</strong></p><p id="291a62a9-0569-80a0-993c-e4caa1fc2459" class="">Um sistema de gerenciamento de tráfego aéreo existe dois tipos de módulos: um que realiza cálculos complexos de trajetória de voo, exigindo muita capacidade de processamento da CPU, e outro que monitora constantemente os radares e sensores, exigindo respostas rápidas a eventos externos. Para otimizar o sistema, eles precisam categorizar corretamente esses módulos.</p><p id="291a62a9-0569-804e-8f38-ddc217301ca7" class=""><strong>Resposta: a) Arquitetura em Camadas, que isola as funções em níveis hierárquicos.</strong></p><p id="291a62a9-0569-804b-b075-fc2ab72c7185" class=""><strong>Questão 22</strong></p><p id="291a62a9-0569-803b-b8e0-c0c6047a2c03" class="">Em um sistema operacional multitarefa, é comum ter vários programas prontos para atender-los, mas a CPU pode executar apenas um de cada vez. Para garantir que todos os programas sejam atendidos de forma eficiente e que o sistema permaneça responsivo, o SO utiliza uma estratégia para decidir qual programa executar em seguida.</p><p id="291a62a9-0569-800d-83e1-f236f81e3531" class=""><strong>Resposta: b) O escalonador seleciona o processo com o menor tempo restante de execução.</strong></p><p id="291a62a9-0569-8091-8bd9-d542627f8380" class=""><strong>Questão 23</strong></p><p id="291a62a9-0569-80d7-a4d5-c6cdf8b2d504" class="">Uma empresa de processamento de dados opera um servidor que executa tarefas de análise financeiras em lote. A gerência deseja maximizar a produtividade do sistema em termos de conclusão de tarefas, priorizando as tarefas que podem ser completadas mais rapidamente para liberar recursos.</p><p id="291a62a9-0569-8048-8d4c-ce44d8672608" class=""><strong>Resposta: a) O escalonador prioriza tarefas com o menor tempo de execução restante.</strong></p><p id="291a62a9-0569-80ac-a3f1-e682570da4d2" class=""><strong>Questão 24</strong></p><p id="291a62a9-0569-8008-8849-fbf38bceb606" class="">Qual critério de escalonamento mede a quantidade de processos que são efetivamente concluídos em um dado intervalo de tempo, sendo uma métrica útil para avaliar a eficiência do sistema em um ambiente de processamento em lote?</p><p id="291a62a9-0569-80b1-b504-ec442b7c8380" class=""><strong>Resposta: b) Tempo de Processador (CPU Burst), que é o tempo total que um processo leva para ser executado.</strong></p><p id="291a62a9-0569-808b-8577-e815bcb36817" class=""><strong>Questão 25</strong></p><p id="291a62a9-0569-80cd-9e18-d2bce9eb9587" class="">Qual critério de escalonamento representa o tempo total desde a submissão de um processo até sua conclusão, refletindo a percepção do usuário sobre o desempenho do sistema?</p><p id="291a62a9-0569-8075-b72f-cc0531b45f9d" class=""><strong>Resposta: a) Tempo de Turnaround.</strong></p><p id="291a62a9-0569-80b3-9c2a-d2a00166fff4" class=""><strong>Questão 26</strong></p><p id="291a62a9-0569-807b-83c9-ddcfef56100d" class="">Dois administradores de sistemas debatem a escolha de uma política de escalonamento para um servidor que atende a múltiplos usuários. Um defende uma política que permite a execução completa de um processo antes de passar para o próximo, enquanto o outro prefere uma abordagem que alterna entre processos para garantir que todos tenham oportunidade de progresso.</p><p id="291a62a9-0569-80a2-9e3f-c74717093476" class=""><strong>Resposta: c) O algoritmo de escalonamento FIFO (First In, First Out), também conhecido como FCFS (First Come, First Served), segue qual princípio essencial para selecionar o próximo processo a ser executado, e qual é a principal característica em relação ao ordem de chegada?</strong></p><p id="291a62a9-0569-809e-9a92-d91922e542bd" class=""><strong>Questão 27</strong></p><p id="291a62a9-0569-80fa-aea8-d87d2c5d4652" class="">Um laboratório de processamento de imagens tem uma série de tarefas de diferentes durações. Se a política de escalonamento sempre preferir as tarefas mais curtas, há um risco de que as tarefas mais longas nunca sejam executadas ou sejam atrasadas indefinidamente.</p><p id="291a62a9-0569-800f-a6bf-d8d93a0600e4" class=""><strong>Resposta: c) Starvation (Adiamento Indefinido), a possibilidade de um processo ser adiado indefinidamente, correndo o risco de nunca ser executado.</strong></p><p id="291a62a9-0569-8017-af71-cfb08e6347e7" class=""><strong>Questão 28</strong></p><p id="291a62a9-0569-80b3-b4e4-db1d717bcab0" class="">Um administrador de sistemas está otimizando o desempenho de um servidor que executa múltiplas aplicações simultaneamente. Ele observa que o sistema está alocando memória de forma ineficiente, levando a gargalos e falhas.</p><p id="291a62a9-0569-804e-a320-e3bcca46c254" class=""><strong>Resposta: b) Para ocultar o custo da memória principal, que é um recurso escasso, o sistema operacional deve priorizar a memória para maximizar o compartilhamento do processador e de outros recursos computacionais.</strong></p><p id="291a62a9-0569-80a6-98ed-db5694bbee79" class=""><strong>Questão 29</strong></p><p id="291a62a9-0569-808b-97f7-e7b06d687b76" class="">Um sistema operacional legado, a memória principal é dividida em uma área para o sistema operacional e outra para o programa do usuário. Como não há suporte a multiprogramação, apenas um programa pode ser executado de cada vez. Essa simplicidade, entretanto, leva a uma utilização ineficiente dos recursos, especialmente da memória.</p><p id="291a62a9-0569-80b4-978e-f3b543d1e4a2" class=""><strong>Resposta: d) A complexidade na implementação do controle de acesso à memória.</strong></p><p id="291a62a9-0569-80f4-8991-f5525d0692b2" class=""><strong>Questão 30</strong></p><p id="291a62a9-0569-8018-b0fa-d979628fbe88" class="">Uma equipe de desenvolvimento está otimizando um sistema operacional embarcado e precisa decidir sobre uma estratégia de alocação de memória que minimize o desperdício e maximize a utilização, mesmo com programas de tamanhos variados. Eles consideram diferentes algoritmos, mas priorizam a simplicidade e a velocidade.</p><p id="291a62a9-0569-809b-b532-c79c913400de" class=""><strong>Resposta: b) Deadlock, um bloqueio mútuo entre processos que disputam recursos.</strong></p><p id="291a62a9-0569-8099-ac70-c7a249be3ee4" class=""><strong>Questão 31</strong></p><p id="291a62a9-0569-802e-9dcc-fd6de1126ab5" class="">Um cientista de dados está executando um algoritmo complexo que manipula um enorme volume de dados. Ele percebe que seu programa, que exige gigabytes de RAM se carregar, está rodando lentamente, com frequentes pausas. O sistema operacional está inteligente para gerenciar a memória, trocando partes do programa entre a memória e o disco para permitir que outros programas rodem.</p><p id="291a62a9-0569-800e-bf4b-fe231a740921" class=""><strong>Resposta: a) A impossibilidade de proteger a área do sistema operacional de acessos indevidos.</strong></p><p id="291a62a9-0569-80ff-856d-f4e789998fdb" class=""><strong>Questão 32</strong></p><p id="291a62a9-0569-80df-b58f-d909adc7bfa0" class="">Um sistema que utiliza memória virtual por paginação, um programa tenta acessar uma página que não está na memória principal na RAM naquele momento. Essa situação dispara um mecanismo para trazer a página do disco para a memória, permitindo que o programa continue.</p><p id="291a62a9-0569-802e-99e1-f2f927cbed57" class=""><strong>Resposta: b) Um &quot;page fault&quot;, que faz com que o sistema transfira a página da memória secundária para a principal.</strong></p><p id="291a62a9-0569-80f2-8429-d8ddbc671cad" class=""><strong>Questão 33</strong></p><p id="291a62a9-0569-80e2-88fe-eab0ef9aedc1" class="">Um engenheiro de desempenho está ajustando os parâmetros de um sistema operacional para melhorar a responsividade de aplicativos que exigem muita memória. Ele precisa garantir que o sistema não sofra com interrupções excessivas causadas por acessos a páginas que não estão na memória principal.</p><p id="291a62a9-0569-80fb-be02-ecfa695f9e6c" class=""><strong>Resposta: a) Apenas quando o processo termina ou é interrompido.</strong></p><p id="291a62a9-0569-807d-b1c8-f469bb827c5b" class=""><strong>Questão 34</strong></p><p id="291a62a9-0569-8040-a555-dcd8eced2374" class="">Um analista de sistemas percebe que a máquina virtual de um servidor está com baixa performance, pois uma parte do código é executada repetidamente, acessando a mesma área de memória. O hardware do processador possui um mecanismo para acelerar esse acesso, reduzindo o tempo de busca na memória.</p><p id="291a62a9-0569-8017-a248-c4153da20d82" class=""><strong>Resposta: d) Cache de CPU, que armazena dados frequentemente acessados para acelerar o processamento.</strong></p><p id="291a62a9-0569-808f-acf3-c01063fd1175" class=""><strong>Questão 35</strong></p><p id="291a62a9-0569-801d-bc02-fff3de485ad2" class="">Qual termo é utilizado para descrever a situação de excessiva transferência de páginas/segmentos entre a memória principal e a memória secundária, que ocorre quando há mais processos competindo pela memória do que o sistema pode suportar de forma eficiente?</p><p id="291a62a9-0569-8015-a5fd-d74e43d2cdac" class=""><strong>Resposta: d) Thrashing, a troca excessiva de páginas que degrada o desempenho devido à intensa atividade de paginação/swapping.</strong></p><p id="291a62a9-0569-809e-b4d9-cde3fff36a5f" class=""><strong>Questão 36</strong></p><p id="291a62a9-0569-80fa-8fe6-c97dbabfcb91" class="">Uma equipe de desenvolvimento está projetando um sistema que lidará com grandes volumes de dados em memória. Para otimizar o acesso, eles consideram diferentes estruturas de dados, como arrays, listas ligadas ou árvores. A escolha afeta a eficiência em termos de tempo de busca e atualização.</p><p id="291a62a9-0569-80bb-bd53-d5a97314fbb4" class=""><strong>Resposta: e) O uso exclusivo de TLB, que otimiza o acesso à memória.</strong></p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
